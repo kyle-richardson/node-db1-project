@@ -33,6 +33,7 @@ server.post('/api/accounts/', validateNewAccount, (req, res)=> {
             res.status(200).json(promise)
         })
         .catch(err=> {
+            console.log(err.message)
             res.status(500).json( {error: 'Could not add new account to server. Server error'})
         })
 })
